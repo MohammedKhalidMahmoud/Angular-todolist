@@ -17,5 +17,6 @@ export class TasksColumnComponent implements OnInit {
 
     @Input() title='';
     @Input() backgroundColor='';
+    @Input() textColor='';
     @Input() svgPath='';
 }

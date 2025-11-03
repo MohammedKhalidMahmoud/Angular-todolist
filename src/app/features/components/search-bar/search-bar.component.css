@@ -10,6 +10,11 @@
 }
 input{
     /* background-color: black; */
+    appearance: none;
+    -webkit-appearance: none; /* Safari fix */
+    -moz-appearance: none;
+    outline: none;
+    box-shadow: 0;
     border-width: 1px;
     border-radius: 8px;
     padding: 1rem;
@@ -19,7 +24,8 @@ input{
 
 input::placeholder{
     color: #999999;
-    
+    font-size: 1.2rem;
+
 }
 
 .search-icon{

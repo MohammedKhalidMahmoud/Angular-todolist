@@ -15,6 +15,7 @@
 .todoColor{
      background-color: #EEF2FC;
      
+     
      /* background-color:black; */
 }
 
@@ -24,4 +25,18 @@
 
 .doneColor{
     background-color: #FDF0EC;
+}
+.todoTextColor{
+     color: #14367B;
+    
+     
+     /* background-color:black; */
+}
+
+.inprogressTextColor{
+    color: #8F4F00 ;
+}
+
+.doneTextColor{
+    color: #81290E;
 }
