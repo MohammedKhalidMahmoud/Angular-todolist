@@ -1,0 +1,55 @@
+.diamond{
+    rotate: -45;
+
+}
+
+.main{
+    height:100%;
+    /* background-color: black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* align-items:flex-end; */
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+}
+button{
+    
+    width: 12rem;
+    border-radius: 8px;
+    border: none;
+    padding : 0.5rem 3rem;
+    background-color: #EEF2FC;
+    color: #14367B;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+button.tasks-button{
+    background-color: #2563DC ;
+    color: white;
+}
+.sub-main-1{
+    /* display: flex;
+    justify-content: center; */
+    /* background-color: red; */
+}
+
+.sub-main-2{
+    display:flex;
+    justify-content: center;
+}
+
+button.logout-button{
+    color: #81290E;
+    background-color: #FDF0EC ;
+}

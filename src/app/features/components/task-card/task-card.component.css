@@ -1,0 +1,30 @@
+.task-card{
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    border-color: #CAD9F6;
+    background-color: white;
+    margin-bottom:1rem;
+    /* background-color:black; */
+    /* margin-right:1rem; */
+}
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.card-header img{
+    width:44px;
+    height:44px;
+    border-radius: 50%;
+}
+
+.card-header .edit-icon{
+    margin-right:6px;
+}
+
+.card-body{
+
+}

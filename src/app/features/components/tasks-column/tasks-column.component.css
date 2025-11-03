@@ -1,0 +1,27 @@
+
+
+.tasks-column{
+    border-radius: 8px;
+    /* background-color: */
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+.align{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.todoColor{
+     background-color: #EEF2FC;
+     
+     /* background-color:black; */
+}
+
+.inprogressColor{
+    background-color: #FFF6EB ;
+}
+
+.doneColor{
+    background-color: #FDF0EC;
+}

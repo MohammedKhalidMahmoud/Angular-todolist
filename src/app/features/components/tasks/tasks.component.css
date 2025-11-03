@@ -1,0 +1,42 @@
+.main{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-arrow-icon{
+    margin-right: 0.5rem;
+}
+
+.right-arrow-icon{
+    margin-right: 0.5rem;
+
+}
+
+.users-icon{
+    margin-right: 0.5rem;
+
+}
+
+.controllers-icon{
+    margin-right: 0.5rem;
+}
+button{
+    background-color: #2563DC;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    
+}
+
+button div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem
+}
+.tasks-columns-container{
+    display: flex;
+    
+}
