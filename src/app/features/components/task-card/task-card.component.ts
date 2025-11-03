@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
+import ITodo from '../../../model/todo.model';
+import { TodoServices } from './../../../services/todo.service';
 @Component({
     selector: 'app-task-card',
     standalone: true,
@@ -8,7 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class TaskCardComponent implements OnInit {
-    constructor() { }
+    constructor(public todoServices: TodoServices) { }
 
     ngOnInit() { }
+
+    @Input() todo!:ITodo;
+
+    edit(id: string | number){
+        console.log("edit");
+    }
+
+    delete(id: string | number){
+        this.todoServices.deleteTodoById(id);
+    }
 }
