@@ -15,7 +15,9 @@ import { TodoServices } from '../../../services/todo.service';
 export class TasksColumnComponent implements OnInit {
     constructor(public todoServices: TodoServices ) { }
     
-    ngOnInit() {this.todoServices.getTodos() }
+    ngOnInit() { }
+
+    
 
     @Input() title='';
     @Input() backgroundColor='';
@@ -25,5 +27,7 @@ export class TasksColumnComponent implements OnInit {
     get filteredTodos(){
         return this.todoServices.todos().filter(t=>t.status == this.title)
     }
+    
+    
     
 }

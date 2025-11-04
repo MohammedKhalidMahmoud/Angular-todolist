@@ -3,12 +3,16 @@
     <img src="assets/images/user.jpeg" alt="user profile picture" />
     <div>
       <!-- edit Icon -->
+      @if(todo.isEditing){
+      <button (click)="edit(todo)">save</button>
+      } @else {
       <img
-        (click)="edit(todo.id)"
+        (click)="showTextArea(todo)"
         class="svg"
         src="assets/icons/tasks-action/edit.svg"
         alt="edit Icon"
       />
+      }
 
       <!-- delete Icon -->
       <img
@@ -19,7 +23,11 @@
       />
     </div>
   </div>
+  @if(todo.isEditing){
+  <textarea type="text" [value]="todo.title" [formControl]="title"></textarea>
+  } @else{
   <div class="card-body">
     {{ todo.title }}
   </div>
+  }
 </div>

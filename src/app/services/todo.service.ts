@@ -10,9 +10,9 @@ export class TodoServices{
     private http= inject(HttpClient);
     todos=signal<ITodo[]>([]);
 
-    todoTodos= computed(() => this.todos().filter(t => t.status === 'To do'));
-    inProgressTodos = computed(() => this.todos().filter(t => t.status === 'In progress'));
-    doneTodos = computed(() => this.todos().filter(t => t.status === 'Done'));
+    todoTodos= computed(() => this.todos().filter(t => t.status === 'todo'));
+    inProgressTodos = computed(() => this.todos().filter(t => t.status === 'in progress'));
+    doneTodos = computed(() => this.todos().filter(t => t.status === 'done'));
 
     getTodos(){
         this.http.get<ITodo[]>(this.uri).subscribe((data)=>{
@@ -27,8 +27,7 @@ export class TodoServices{
 
     updateTodo(updatedData: ITodo){
         this.http.patch<ITodo>(`${this.uri}/${updatedData.id}`, updatedData).subscribe((data)=>{
-            console.log(data);
-            // this.todos.set(this.todos().filter(t.zzz))
+            this.todos.set(this.todos().map(t=> t.id===updatedData.id ? updatedData : t));
         })
     }
 
@@ -39,9 +38,10 @@ export class TodoServices{
         });
     }
 
-    createTodo(todoData: ITodo){
-        this.http.post<ITodo>(this.uri, todoData).subscribe((data)=>{
+    createTodo(createdTodo: ITodo){
+        this.http.post<ITodo>(this.uri, createdTodo).subscribe((data)=>{
             console.log(data);
         });
+        this.todos.update(t=>[...t, createdTodo]);
     }
 }
