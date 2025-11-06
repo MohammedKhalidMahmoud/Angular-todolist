@@ -3,7 +3,7 @@
     {
       "id": "6",
       "title": "qui ullam ratione quibusdam voluptatem quia omnis",
-      "status": "done"
+      "status": "todo"
     },
     {
       "id": "7",
@@ -13,7 +13,7 @@
     {
       "id": "8",
       "title": "quo adipisci enim quam ut ab",
-      "status": "in progress"
+      "status": "done"
     },
     {
       "id": "9",
@@ -23,17 +23,17 @@
     {
       "id": "10",
       "title": "illo est ratione doloremque quia maiores aut",
-      "status": "in progress"
+      "status": "todo"
     },
     {
       "id": "11",
       "title": "vero rerum temporibus dolor",
-      "status": "in progress"
+      "status": "done"
     },
     {
       "id": "12",
       "title": "ipsa repellendus fugit nisi",
-      "status": "in progress"
+      "status": "inProgress"
     },
     {
       "id": "13",
@@ -43,12 +43,12 @@
     {
       "id": "16",
       "title": "accusamus eos facilis sint et aut voluptatem",
-      "status": "in progress"
+      "status": "todo"
     },
     {
       "id": "17",
       "title": "quo laboriosam deleniti aut qui",
-      "status": "in progress"
+      "status": "inProgress"
     },
     {
       "id": "18",
@@ -56,21 +56,9 @@
       "status": "done"
     },
     {
-      "id": "20",
-      "title": "bb",
-      "status": "todo",
-      "isEditing": false
-    },
-    {
       "id": "21",
       "title": "suscipit repellat esse quibusdam voluptatem incidunt",
       "status": "done"
-    },
-    {
-      "id": "22",
-      "title": "distinctio vitae autem nihil ut molestias quo",
-      "status": "todo",
-      "isEditing": false
     },
     {
       "id": "23",
@@ -78,31 +66,19 @@
       "status": "done"
     },
     {
-      "id": "a9b8e1aa-081f-4ecd-8693-d3990a5be72e",
-      "title": "d",
-      "status": "todo",
-      "isEditing": false
-    },
-    {
       "id": "baa7c9be-04ca-4368-96a9-f9df9dc4295f",
       "title": "ddddddddddddd",
       "status": "in progress"
     },
     {
-      "id": "7a2812c4-31e1-483a-83ee-11dd965f6307",
-      "title": "dddd",
-      "status": "todo",
-      "isEditing": false
+      "id": "dcc7df38-f923-4afc-89ce-8eba7f02c7a5",
+      "title": "ggggggg",
+      "status": "in progress"
     },
     {
-      "id": "54956b3c-3ba8-4288-8768-1a9a1b74072f",
-      "title": "vvvvvvvvvvv",
-      "status": "todo"
-    },
-    {
-      "id": "b8b25302-3dd5-4954-8482-4845be5d6bcb",
-      "title": "ddddddddddddd",
-      "status": "todo"
+      "id": "8ecfb0f2-d9ed-482d-9f85-1442c9c2c9c2",
+      "title": "ggggggg",
+      "status": "in progress"
     }
   ]
 }

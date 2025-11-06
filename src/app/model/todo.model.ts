@@ -3,6 +3,6 @@
 export default interface ITodo {
   id: string | number,
   title: string;
-  status: "todo" | "in progress" | "done";
+  status: "todo" | "inProgress" | "done";
   isEditing?: boolean
 }

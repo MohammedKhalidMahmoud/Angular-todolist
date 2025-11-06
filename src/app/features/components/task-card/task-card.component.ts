@@ -2,12 +2,13 @@ import { Component, OnInit, Input } from '@angular/core';
 import ITodo from '../../../model/todo.model';
 import { TodoServices } from './../../../services/todo.service';
 import { FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 @Component({
     selector: 'app-task-card',
     standalone: true,
     templateUrl: 'task-card.component.html',
     styleUrls: ['task-card.component.css'],
-    imports: [FormsModule, ReactiveFormsModule]
+    imports: [FormsModule, ReactiveFormsModule, DragDropModule]
 })
 
 export class TaskCardComponent implements OnInit {

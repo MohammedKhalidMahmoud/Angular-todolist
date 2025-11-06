@@ -15,11 +15,14 @@ import ITodo from '../../../model/todo.model';
 export class TasksComponent implements OnInit {
     constructor(public todoServices: TodoServices) { }
 
-    ngOnInit() { this.todoServices.getTodos()}
+    ngOnInit() { 
+        this.todoServices.getTodos();
+        
+    }
 
     // applyForm=
     title= new FormControl<string>('');
-    status=new FormControl<'todo' | 'in progress'| 'done'>('todo');
+    status=new FormControl<'todo' | 'inProgress'| 'done'>('todo');
     isModalOpen=false;
 
     toggleModal(){
