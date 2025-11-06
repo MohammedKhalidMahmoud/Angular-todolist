@@ -21,7 +21,9 @@ export class TasksComponent implements OnInit {
     title= new FormControl<string>('');
     status=new FormControl<'todo' | 'in progress'| 'done'>('todo');
     isModalOpen=false;
+
     toggleModal(){
+        console.log("toggle");
         this.isModalOpen=!this.isModalOpen;
     }
 
@@ -34,7 +36,7 @@ export class TasksComponent implements OnInit {
             status: this.status.value!
         }
         this.todoServices.createTodo(newTodo);
-        this.toggleModal();
+        // this.toggleModal();
         // this.todoServices.getTodos()
         // console.log(status);
     }

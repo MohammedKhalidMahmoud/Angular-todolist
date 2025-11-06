@@ -48,11 +48,11 @@
   <div class="modal">
     <div class="header">
       <h2>New Task</h2>
-      <img class="svg" src="assets/images/close-icon.png" alt="" />
+      <img (click)="toggleModal()" class="svg" src="assets/images/close-icon.png" alt="" />
     </div>
     <hr class="line" />
-    <label for="title-field">Task Title :</label><br />
-    <input [formControl]="title" class="input" type="text" id="title-field" /><br /><br />
+    <label for="title-field">Task Title :</label><br/>
+    <textarea [formControl]="title" class="input" type="text" id="title-field"></textarea> <br/><br/>
     <label for="myDropdown">Status :</label><br />
     <select [formControl]="status" id="myDropdown" name="myDropdown">
       <option value="todo">Todo</option>
@@ -61,7 +61,7 @@
     </select>
     <br /><br />
     <div class="button-div">
-      <button (click)="createNewTodo()">Add</button>
+      <button class="Add-Button" (click)="createNewTodo()">Add</button>
     </div>
   </div>
   }
@@ -70,19 +70,19 @@
       title="todo"
       backgroundColor="todoColor"
       textColor="todoTextColor"
-      svgPath="assets/icons/todo.svg"
+      svgPath="assets/icons/task-status/todo.svg"
     ></app-tasks-column>
     <app-tasks-column
       title="in progress"
       backgroundColor="inprogressColor"
       textColor="inprogressTextColor"
-      svgPath="assets/icons/inprogress.svg"
+      svgPath="assets/icons/task-status/inprogress.svg"
     ></app-tasks-column>
     <app-tasks-column
       title="done"
       backgroundColor="doneColor"
       textColor="doneTextColor"
-      svgPath="assets/icons/done.svg"
+      svgPath="assets/icons/task-status/done.svg"
     ></app-tasks-column>
   </div>
 </div>

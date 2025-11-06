@@ -37,7 +37,7 @@ button div{
 .modal{
     position: absolute;
     width:50%;
-    height:30%;
+    height:35%;
     /* top: 50%; */
     left:50%;
     transform: translate(-50%);
@@ -77,3 +77,35 @@ button div{
 .modal h2{
     /* background-color:red; */
 }
+
+.Add-Button{
+    padding-inline: 3rem;
+    font-size: 1.1rem;
+}
+
+.input{
+    width:50%;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 3px 10px;
+}
+
+textarea{
+    resize: vertical;
+    min-height: 1.5rem;
+    max-height: 6rem;
+}
+
+/* .modal .header img{
+    z-index:3;
+} */
+
+
+select{
+    width:40%;
+}
+
+select::selection{
+    font-size:30px;
+}
+
