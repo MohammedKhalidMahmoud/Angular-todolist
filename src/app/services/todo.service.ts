@@ -17,19 +17,29 @@ export class TodoService {
   inProgressTodos = signal<ITodo[]>([]);
   doneTodos = signal<ITodo[]>([]);
 
-  getTodos() {
+  getTodos(type: string) {
     this.http.get<ITodo[]>(this.uri).subscribe((data) => {
-      console.log(data);
       this.todos.set(data);
-      this.splitTodos(data);
+      console.log(data);
+      if(type==='todo'){
+        this.todoTodos.set(data.filter(t=>t.status==='todo'))
+      }
+      else if(type==='inProgress'){
+        this.inProgressTodos.set(data.filter(t=>t.status==='inProgress'))
+      }
+      else if(type==='done'){
+        this.doneTodos.set(data.filter(t=>t.status==='done'))
+      }
+      // this.todos.set(data);
+      // this.splitTodos(data);
     });
   }
 
-  private splitTodos(todos: ITodo[]) {
-    this.todoTodos.set(todos.filter((t) => t.status === 'todo'));
-    this.inProgressTodos.set(todos.filter((t) => t.status === 'inProgress'));
-    this.doneTodos.set(todos.filter((t) => t.status === 'done'));
-  }
+  // private splitTodos(todos: ITodo[]) {
+  //   this.todoTodos.set(todos.filter((t) => t.status === 'todo'));
+  //   this.inProgressTodos.set(todos.filter((t) => t.status === 'inProgress'));
+  //   this.doneTodos.set(todos.filter((t) => t.status === 'done'));
+  // }
 
   getTodoById(id: string | number): Observable<ITodo> {
     return this.http.get<ITodo>(`${this.uri}/${id}`);
@@ -39,29 +49,68 @@ export class TodoService {
     this.http
       .patch<ITodo>(`${this.uri}/${updatedData.id}`, updatedData)
       .subscribe((data) => {
-        this.todos.set(
-          this.todos().map((t) => (t.id === updatedData.id ? updatedData : t))
+        if(data.status==='todo'){
+          this.todoTodos.set(
+          this.todoTodos().map((t) => (t.id === updatedData.id ? updatedData : t))
         );
+        }
+        else if(data.status==='inProgress'){
+          this.inProgressTodos.set(
+          this.inProgressTodos().map((t) => (t.id === updatedData.id ? updatedData : t))
+        );
+        }
+        else if(data.status==='done'){
+          this.doneTodos.set(
+          this.doneTodos().map((t) => (t.id === updatedData.id ? updatedData : t))
+        );
+        }
+        
       });
   }
 
   async deleteTodoById(id: string | number) {
     this.http.delete<ITodo>(`${this.uri}/${id}`).subscribe((data) => {
       console.log(data);
-      this.todos.set(this.todos().filter((t) => t.id !== id));
-      
+      // this.todos.set(this.todos().filter((t) => t.id !== id));
+      if(data.status==='todo'){
+        this.todoTodos.set(this.todoTodos().filter((t) => t.id !== id));
+      }
+      else if(data.status==='inProgress'){
+        this.inProgressTodos.set(this.inProgressTodos().filter((t) => t.id !== id));
+      }
+      else if(data.status==='done'){
+        this.doneTodos.set(this.doneTodos().filter((t) => t.id !== id));
+      }
     });
   }
 
   createTodo(createdTodo: ITodo) {
     this.http.post<ITodo>(this.uri, createdTodo).subscribe((data) => {
       console.log(data);
+      if(data.status==='todo'){
+        this.todoTodos.update((t) => [...t, createdTodo]);
+      }
+      else if(data.status==='inProgress'){
+        this.inProgressTodos.update(t=> [...t, createdTodo]);
+      }
+      else if(data.status==='done'){
+        this.doneTodos.update(t=> [...t, createdTodo]);
+      }
     });
-    this.todos.update((t) => [...t, createdTodo]);
+    
   }
 
   search(searchWord: string) {
-    const filtered= this.todos().filter((t)=>t.title.includes(searchWord.toLowerCase()));
-    this.splitTodos(filtered);
+    
+  const lower = searchWord.toLowerCase();
+
+  const filteredTodos: ITodo[] = this.todos().filter(t =>
+    t.title.toLowerCase().includes(lower)
+  );
+
+  this.todoTodos.set(filteredTodos.filter(t => t.status === 'todo'));
+  this.inProgressTodos.set(filteredTodos.filter(t => t.status === 'inProgress'));
+  this.doneTodos.set(filteredTodos.filter(t => t.status === 'done'));
+
   }
 }

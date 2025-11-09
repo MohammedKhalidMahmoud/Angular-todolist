@@ -28,3 +28,16 @@
 .card-body{
 
 }
+
+.save-icon{
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color:white;
+
+}
+
+.align{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}

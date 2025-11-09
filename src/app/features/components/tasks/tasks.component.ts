@@ -17,7 +17,9 @@ export class TasksComponent implements OnInit {
     constructor(public todoService: TodoService) { }
 
     ngOnInit() { 
-        this.todoService.getTodos();
+        this.todoService.getTodos('todo');
+        this.todoService.getTodos('inProgress');
+        this.todoService.getTodos('done');
         
     }
 
@@ -40,7 +42,7 @@ export class TasksComponent implements OnInit {
             status: this.status.value!
         }
         this.todoService.createTodo(newTodo);
-        // this.toggleModal();
+        this.toggleModal();
         // this.todoServices.getTodos()
         // console.log(status);
     }

@@ -1,10 +1,10 @@
 <div class="task-card" cdkDrag>
   <div class="card-header">
     <img src="assets/images/user.jpeg" alt="user profile picture" />
-    <div>
+    <div class="align">
       <!-- edit Icon -->
       @if(todo.isEditing){
-      <button (click)="edit(todo)">Save</button>
+      <button class="save-icon" (click)="edit(todo)">Save</button>
       } @else {
       <img
         (click)="showTextArea(todo)"

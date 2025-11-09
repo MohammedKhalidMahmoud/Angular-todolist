@@ -109,3 +109,6 @@ select::selection{
     font-size:30px;
 }
 
+.w-third{
+    width: 30%;
+}

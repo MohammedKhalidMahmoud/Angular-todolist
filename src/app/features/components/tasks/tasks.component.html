@@ -56,7 +56,7 @@
     <label for="myDropdown">Status :</label><br />
     <select [formControl]="status" id="myDropdown" name="myDropdown">
       <option value="todo">Todo</option>
-      <option value="in progress">In Progress</option>
+      <option value="inProgress">In Progress</option>
       <option value="done">Done</option>
     </select>
     <br /><br />
@@ -67,6 +67,7 @@
   }
   <div class="tasks-columns-container">
     <app-tasks-column
+      class="w-third"
       title="todo"
       backgroundColor="todoColor"
       textColor="todoTextColor"
@@ -74,6 +75,7 @@
       data="todoTodos"
     ></app-tasks-column>
     <app-tasks-column
+      class="w-third"
       title="inProgress"
       backgroundColor="inprogressColor"
       textColor="inprogressTextColor"
@@ -81,6 +83,7 @@
       data="inProgressTodos"
     ></app-tasks-column>
     <app-tasks-column
+      class="w-third"
       title="done"
       backgroundColor="doneColor"
       textColor="doneTextColor"

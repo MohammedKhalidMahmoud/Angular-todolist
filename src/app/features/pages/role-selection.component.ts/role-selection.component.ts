@@ -12,7 +12,7 @@ export class RoleSelectionComponent implements OnInit {
     constructor(private authService: AuthService) { }
 
     ngOnInit() { 
-        const userInput=prompt();
+        const userInput=prompt("Enter your role:");
         // console.log(userInput);
         this.authService.login(userInput!);
     }
