@@ -31,7 +31,7 @@
         alt="controllers icon"
       />
 
-      <button (click)="toggleModal()">
+      <button appAdminOnly (click)="toggleModal()">
         <div>
           New task
           <img
@@ -48,7 +48,7 @@
   <div class="modal">
     <div class="header">
       <h2>New Task</h2>
-      <img (click)="toggleModal()" class="svg" src="assets/images/close-icon.png" alt="" />
+      <img   (click)="toggleModal()" class="svg" src="assets/images/close-icon.png" alt="" />
     </div>
     <hr class="line" />
     <label for="title-field">Task Title :</label><br/>

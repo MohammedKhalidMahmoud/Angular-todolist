@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl , ReactiveFormsModule} from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { TodoService } from '../../../services/todo.service';
+import { AuthService } from '../../../services/auth.service'
 @Component({
     selector: 'app-search-bar',
     standalone: true,
@@ -11,8 +12,8 @@ import { TodoService } from '../../../services/todo.service';
 })
 
 export class SearchbarComponent implements OnInit {
-    constructor(public todoService: TodoService) { }
-
+    constructor(public todoService: TodoService, private authService: AuthService) { }
+    isButtonShown=false;
     ngOnInit() { 
         this.searchControl.valueChanges
       .pipe(
@@ -28,7 +29,11 @@ export class SearchbarComponent implements OnInit {
 
     searchControl= new FormControl('');
 
+    logout(){
+      this.authService.logout();
+    }
 
-
-
+    toggle(){
+      this.isButtonShown= !this.isButtonShown;
+    }
 }

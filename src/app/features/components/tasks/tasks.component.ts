@@ -4,12 +4,13 @@ import { FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TodoService } from '../../../services/todo.service';
 import { v4 as uuidv4 } from 'uuid';
 import ITodo from '../../../model/todo.model';
+import { AdminOnly } from "../../../directives/admin-only";
 @Component({
     selector: 'app-tasks',
     standalone: true,
     templateUrl: 'tasks.component.html',
     styleUrls: ['tasks.component.css'],
-    imports: [TasksColumnComponent, ReactiveFormsModule, FormsModule]
+    imports: [TasksColumnComponent, ReactiveFormsModule, FormsModule, AdminOnly]
 })
 
 export class TasksComponent implements OnInit {

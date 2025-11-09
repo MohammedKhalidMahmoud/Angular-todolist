@@ -1,10 +1,29 @@
 <div class="main">
   <div class="search-area">
-    <input [formControl]="searchControl" type="text" placeholder="Search"/>
-    <img class="svg search-icon" src="assets/icons/searchbar/search.svg" alt="">
+    <input [formControl]="searchControl" type="text" placeholder="Search" />
+    <img
+      class="svg search-icon"
+      src="assets/icons/searchbar/search.svg"
+      alt=""
+    />
   </div>
   <div class="align">
-    <img class="svg" src="assets/icons/searchbar/notifications.svg" alt="">
-    <img src="assets/images/user.jpeg" alt="user profile icon" />
+    <!-- <img class="svg" src="assets/icons/searchbar/notifications.svg" alt="" /> -->
+    <img
+    (click)="toggle()"
+      src="assets/images/user.jpeg"
+      alt="user profile icon"
+    />
+    @if(isButtonShown){
+      <button class="logout-button" (click)="logout()">Logout</button>
+    }
+    
+    <!-- @if(isListShown){
+    <div class="logout-list">
+      <ul>
+        <li>Logout</li>
+      </ul>
+    </div>
+    } -->
   </div>
 </div>

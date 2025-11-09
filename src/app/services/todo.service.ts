@@ -45,10 +45,11 @@ export class TodoService {
       });
   }
 
-  deleteTodoById(id: string | number) {
+  async deleteTodoById(id: string | number) {
     this.http.delete<ITodo>(`${this.uri}/${id}`).subscribe((data) => {
       console.log(data);
       this.todos.set(this.todos().filter((t) => t.id !== id));
+      
     });
   }
 

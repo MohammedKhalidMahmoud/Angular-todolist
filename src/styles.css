@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root{
+    --primary-color: #2563DC;
+    --error-color: #FDF0EC;
+    --todo-color: #CAD9F6;
+    --inprogress-color: #FFE4C2;
+    --done-color: #FAD0C6;
+}
+
 *{
     font-family: "Poppins", sans-serif;
 }
