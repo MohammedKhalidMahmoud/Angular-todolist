@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import ITodo from '../../../model/todo.model';
-import { TodoServices } from './../../../services/todo.service';
+import { TodoService } from './../../../services/todo.service';
 import { FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 @Component({
@@ -12,7 +12,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 })
 
 export class TaskCardComponent implements OnInit {
-    constructor(public todoServices: TodoServices) { }
+    constructor(public todoService: TodoService) { }
 
     ngOnInit() { }
     @Input() todo!:ITodo;
@@ -26,14 +26,14 @@ export class TaskCardComponent implements OnInit {
     }
 
     delete(id: string | number){
-        this.todoServices.deleteTodoById(id);
+        this.todoService.deleteTodoById(id);
     }
 
     edit(todo: ITodo){
         todo.isEditing= false;
         // console.log(this.title.value);
         // console.log({...todo, title: this.title.value!})
-        this.todoServices.updateTodo({...todo, title: this.title.value!});
+        this.todoService.updateTodo({...todo, title: this.title.value!});
         console.log("checkpoint")
         // this.todoServices.getTodos();
     }

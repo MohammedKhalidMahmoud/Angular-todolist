@@ -5,7 +5,7 @@ import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class TodoServices {
+export class TodoService {
   private uri = 'http://localhost:4000/todos';
   private http = inject(HttpClient);
   todos = signal<ITodo[]>([]);

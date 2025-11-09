@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl , ReactiveFormsModule} from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { TodoServices } from '../../../services/todo.service';
+import { TodoService } from '../../../services/todo.service';
 @Component({
     selector: 'app-search-bar',
     standalone: true,
@@ -11,7 +11,7 @@ import { TodoServices } from '../../../services/todo.service';
 })
 
 export class SearchbarComponent implements OnInit {
-    constructor(public todoServices: TodoServices) { }
+    constructor(public todoService: TodoService) { }
 
     ngOnInit() { 
         this.searchControl.valueChanges
@@ -22,7 +22,7 @@ export class SearchbarComponent implements OnInit {
       .subscribe((value) => {
         console.log('Searching for:', value);
         // ✅ Call your filtering function or API here
-        this.todoServices.search(value!);
+        this.todoService.search(value!);
       });
     }
 

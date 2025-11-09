@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TasksColumnComponent } from '../tasks-column/tasks-column.component';
 import { FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { TodoServices } from '../../../services/todo.service';
+import { TodoService } from '../../../services/todo.service';
 import { v4 as uuidv4 } from 'uuid';
 import ITodo from '../../../model/todo.model';
 @Component({
@@ -13,10 +13,10 @@ import ITodo from '../../../model/todo.model';
 })
 
 export class TasksComponent implements OnInit {
-    constructor(public todoServices: TodoServices) { }
+    constructor(public todoService: TodoService) { }
 
     ngOnInit() { 
-        this.todoServices.getTodos();
+        this.todoService.getTodos();
         
     }
 
@@ -38,7 +38,7 @@ export class TasksComponent implements OnInit {
             title: this.title.value!,
             status: this.status.value!
         }
-        this.todoServices.createTodo(newTodo);
+        this.todoService.createTodo(newTodo);
         // this.toggleModal();
         // this.todoServices.getTodos()
         // console.log(status);

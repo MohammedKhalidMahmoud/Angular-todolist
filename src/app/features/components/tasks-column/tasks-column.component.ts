@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TaskCardComponent } from '../task-card/task-card.component';
 import { CommonModule } from '@angular/common';
-import { TodoServices } from '../../../services/todo.service';
+import { TodoService } from '../../../services/todo.service';
 import {
   transferArrayItem,
   moveItemInArray,
@@ -18,7 +18,7 @@ import ITodo from '../../../model/todo.model';
   imports: [CommonModule, TaskCardComponent, DragDropModule],
 })
 export class TasksColumnComponent implements OnInit {
-  constructor(public todoServices: TodoServices) {}
+  constructor(public todoService: TodoService) {}
 
   ngOnInit() {}
 
@@ -31,12 +31,12 @@ export class TasksColumnComponent implements OnInit {
   get filteredTodos() {
     // return this.todoServices.todos().filter((t) => t.status == this.title);
     if(this.data==='todoTodos'){
-        return this.todoServices.todoTodos();
+        return this.todoService.todoTodos();
     }
     else if(this.data==='inProgressTodos'){
-        return this.todoServices.inProgressTodos();
+        return this.todoService.inProgressTodos();
     }
-    return this.todoServices.doneTodos();
+    return this.todoService.doneTodos();
   }
 
   onDrop(event: CdkDragDrop<ITodo[]>) {
@@ -62,7 +62,7 @@ export class TasksColumnComponent implements OnInit {
     movedTodo.status = toList as 'todo' | 'inProgress' | 'done';
 
     // ✅ Optionally persist the change
-    this.todoServices.updateTodo(movedTodo);
+    this.todoService.updateTodo(movedTodo);
   }
 
 }

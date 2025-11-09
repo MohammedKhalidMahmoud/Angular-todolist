@@ -12,7 +12,9 @@ import { TasksComponent } from '../../components/tasks/tasks.component';
 })
 
 export class TasksPageComponent implements OnInit {
-    constructor() { }
+    constructor() {
+        console.log("Hello World");
+     }
 
     ngOnInit() { }
 }
