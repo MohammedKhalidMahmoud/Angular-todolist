@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { RoleSelectionComponent } from './features/pages/role-selection.component.ts/role-selection.component';
 // import { App } from './app';
-import { authGuard } from './guards/auth-guard';
+import { authGuard } from './core/guards/auth-guard';
 import { TasksPageComponent } from './features/pages/tasks-page/tasks-page.component';
 
 export const routes: Routes = [

@@ -17,24 +17,14 @@
     },
     {
       "id": "12",
-      "title": "ipsa repellendus fugit nisi",
-      "status": "inProgress"
-    },
-    {
-      "id": "13",
-      "title": "hel;lo",
-      "status": "done",
+      "title": "ipsa repelldus fugit ",
+      "status": "inProgress",
       "isEditing": false
     },
     {
       "id": "16",
       "title": "accusamus eos facilis sint et aut voluptatem",
       "status": "todo"
-    },
-    {
-      "id": "17",
-      "title": "quo laboriosam deleniti aut qui",
-      "status": "inProgress"
     },
     {
       "id": "18",
@@ -75,6 +65,11 @@
       "id": "962d1dcf-013d-4cd6-a88e-e6e31f239650",
       "title": "hello",
       "status": "done"
+    },
+    {
+      "id": "88af5ea6-9abf-41ec-8b69-54661315a550",
+      "title": "inProgress",
+      "status": "inProgress"
     }
   ]
 }

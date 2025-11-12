@@ -1,0 +1,24 @@
+{
+  "sideNavBar": {
+    "dashboard": "Dashboard",
+    "projects": "Projects",
+    "tasks": "Tasks",
+    "calendar": "Calendar"
+  },
+
+  "status": {
+    "todo": "Todo",
+    "inProgress": "in Progress",
+    "done": "Done"
+  },
+
+  "controlPanel": {
+    "tasks": "Tasks",
+    "newTask": "newTask"
+  },
+
+  "searchBar": {
+    "search": "Search",
+    "logout": "Logout"
+  }
+}

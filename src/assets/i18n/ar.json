@@ -1,0 +1,24 @@
+{
+  "sideNavBar": {
+    "Dashboard": "لوحة القيادة",
+    "Projects": "مشاريع",
+    "Tasks": "مهام",
+    "Calendar": "تقويم"
+  },
+
+  "status": {
+    "todo": "سينفذ",
+    "inProgress": "قيد التنفيذ",
+    "done": "تم تنفيذه"
+  },
+
+  "controlPanel": {
+    "Tasks": "مهام",
+    "New task": "مهمة جديدة"
+  },
+
+  "searchBar": {
+    "search": "بحث",
+    "logout": "تسجيل الخروج"
+  }
+}

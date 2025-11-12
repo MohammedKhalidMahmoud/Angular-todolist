@@ -2,17 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl , ReactiveFormsModule} from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { TodoService } from '../../../services/todo.service';
-import { AuthService } from '../../../services/auth.service'
+import { AuthService } from '../../../services/auth.service';
+import { LanguageService } from '../../../services/language.service';
+import { TranslateModule } from '@ngx-translate/core';
 @Component({
     selector: 'app-search-bar',
     standalone: true,
     templateUrl: 'search-bar.component.html',
     styleUrls: ['search-bar.component.css'],
-    imports: [ReactiveFormsModule]
+    imports: [ReactiveFormsModule, TranslateModule]
 })
 
+
+
 export class SearchbarComponent implements OnInit {
-    constructor(public todoService: TodoService, private authService: AuthService) { }
+    constructor(public todoService: TodoService, private authService: AuthService, private languageService: LanguageService) { }
     isButtonShown=false;
     ngOnInit() { 
         this.searchControl.valueChanges

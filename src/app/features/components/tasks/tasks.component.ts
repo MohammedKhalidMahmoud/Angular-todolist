@@ -4,7 +4,7 @@ import { FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TodoService } from '../../../services/todo.service';
 import { v4 as uuidv4 } from 'uuid';
 import ITodo from '../../../model/todo.model';
-import { AdminOnly } from "../../../directives/admin-only";
+import { AdminOnly } from "../../../core/directives/admin-only";
 @Component({
     selector: 'app-tasks',
     standalone: true,

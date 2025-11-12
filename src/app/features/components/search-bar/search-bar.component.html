@@ -1,6 +1,6 @@
 <div class="main">
   <div class="search-area">
-    <input [formControl]="searchControl" type="text" placeholder="Search" />
+    <input [formControl]="searchControl" type="text" [placeholder]="'searchBar.search' | translate" />
     <img
       class="svg search-icon"
       src="assets/icons/searchbar/search.svg"
@@ -14,8 +14,9 @@
       src="assets/images/user.jpeg"
       alt="user profile icon"
     />
+    <!-- <h1>{{ 'searchBar.search' | translate }}</h1> -->
     @if(isButtonShown){
-      <button class="logout-button" (click)="logout()">Logout</button>
+      <button class="logout-button" (click)="logout()">{{ ''}}</button>
     }
     
     <!-- @if(isListShown){
